@@ -112,16 +112,17 @@ The **Linear Regression** model achieved excellent prediction performance on the
 
 ## Project Structure
 
+```text
 Employee-Salary-Prediction/
 │
 ├── data/
 │   └── employee_salary_dataset.csv
 │
 ├── images/
-│   ├── scatter_plot.png
 │   ├── bar_chart.png
+│   ├── boxplot.png
 │   ├── heatmap.png
-│   └── boxplot.png
+│   └── scatter_plot.png
 │
 ├── notebooks/
 │   └── Employee_Salary_Prediction.ipynb
@@ -130,6 +131,8 @@ Employee-Salary-Prediction/
 ├── salary_prediction_model.pkl
 ├── requirements.txt
 └── README.md
+```
+
 
 
 ---
