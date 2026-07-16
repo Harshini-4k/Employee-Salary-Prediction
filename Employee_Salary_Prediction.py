@@ -23,11 +23,8 @@ print("All libraries imported successfully!")
 # In[2]:
 
 
-# ============================================
 # Generate Synthetic Employee Dataset
-# ============================================
 
-# Set random seed for reproducible results
 np.random.seed(42)
 
 # Number of employee records
@@ -178,9 +175,7 @@ print("Duplicates Removed Successfully!")
 # In[11]:
 
 
-# ============================================
 # Statistical Summary
-# ============================================
 
 employee_data.describe()
 
@@ -188,9 +183,7 @@ employee_data.describe()
 # In[13]:
 
 
-# ============================================
 # Average Salary by Education
-# ============================================
 
 employee_data.groupby("EducationLevel")["Salary"].mean()
 
@@ -198,9 +191,7 @@ employee_data.groupby("EducationLevel")["Salary"].mean()
 # In[14]:
 
 
-# ============================================
 # Average Salary by Job Role
-# ============================================
 
 employee_data.groupby("JobRole")["Salary"].mean()
 
@@ -208,9 +199,7 @@ employee_data.groupby("JobRole")["Salary"].mean()
 # In[15]:
 
 
-# ============================================
 # Average Salary by Company Type
-# ============================================
 
 employee_data.groupby("CompanyType")["Salary"].mean()
 
@@ -218,9 +207,7 @@ employee_data.groupby("CompanyType")["Salary"].mean()
 # In[16]:
 
 
-# ============================================
 # Scatter Plot: Experience vs Salary
-# ============================================
 
 plt.figure(figsize=(8,5))
 
@@ -242,9 +229,7 @@ plt.show()
 # In[17]:
 
 
-# ============================================
 # Average Salary by Job Role
-# ============================================
 
 plt.figure(figsize=(8,5))
 
@@ -262,9 +247,7 @@ plt.show()
 # In[18]:
 
 
-# ============================================
 # Correlation Heatmap
-# ============================================
 
 plt.figure(figsize=(10,6))
 
@@ -287,9 +270,7 @@ plt.show()
 # In[19]:
 
 
-# ============================================
 # Salary Distribution by Education Level
-# ============================================
 
 plt.figure(figsize=(8,5))
 
@@ -309,9 +290,7 @@ plt.show()
 # In[20]:
 
 
-# ============================================
 # Convert Categorical Data into Numerical Data
-# ============================================
 
 employee_data_ml = pd.get_dummies(
     employee_data,
@@ -327,9 +306,7 @@ employee_data_ml.head()
 # In[21]:
 
 
-# ============================================
 # Features and Target
-# ============================================
 
 X = employee_data_ml.drop(["EmployeeID", "Salary"], axis=1)
 
@@ -342,9 +319,7 @@ print("Target Shape :", y.shape)
 # In[22]:
 
 
-# ============================================
 # Train Test Split
-# ============================================
 
 from sklearn.model_selection import train_test_split
 
@@ -362,9 +337,7 @@ print("Testing Data :", X_test.shape)
 # In[23]:
 
 
-# ============================================
 # Linear Regression Model
-# ============================================
 
 from sklearn.linear_model import LinearRegression
 
@@ -378,9 +351,7 @@ print("Model Trained Successfully!")
 # In[24]:
 
 
-# ============================================
 # Predict Salary
-# ============================================
 
 y_pred = model.predict(X_test)
 
@@ -390,9 +361,7 @@ print("Prediction Completed!")
 # In[25]:
 
 
-# ============================================
 # Model Evaluation
-# ============================================
 
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
@@ -414,9 +383,7 @@ print("R² Score:", round(r2,4))
 # In[26]:
 
 
-# =====================================++=======
 # Take User Input
-# ============================================
 
 age = int(input("Enter Age: "))
 gender = input("Enter Gender (Male/Female): ")
@@ -432,9 +399,7 @@ work_hours = int(input("Enter Work Hours Per Week: "))
 # In[27]:
 
 
-# ============================================
 # Create User Data
-# ============================================
 
 user_data = pd.DataFrame({
     "Age": [age],
@@ -452,9 +417,7 @@ user_data = pd.DataFrame({
 # In[28]:
 
 
-# ============================================
 # Convert User Data
-# ============================================
 
 user_data = pd.get_dummies(user_data)
 
@@ -467,9 +430,7 @@ user_data
 # In[29]:
 
 
-# ============================================
 # Predict Salary
-# ============================================
 
 predicted_salary = model.predict(user_data)
 
@@ -479,9 +440,7 @@ print(f"\nPredicted Employee Salary: ₹{predicted_salary[0]:,.2f}")
 # In[30]:
 
 
-# ============================================
 # Save Model
-# ============================================
 
 import joblib
 
